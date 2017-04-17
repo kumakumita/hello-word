@@ -1,0 +1,55 @@
+<!--Entidades fabricante-->
+<!ENTITY f1 "Renault">
+<!ENTITY f2 "Wolkswagen">
+
+<!--Entidades extras-->
+<!ENTITY extraRenault SYSTEM "Extras/extrasRenault.txt">
+<!ENTITY extraWolkswagen SYSTEM "Extras/extrasWolkswagen.txt">
+
+<!--Entidades foto-->
+<!ENTITY fotoRenault SYSTEM "fotoRenault.jpg" NDATA jpg>
+<!ENTITY fotoWolkswagen SYSTEM "fotoWolkswagen.jpg" NDATA jpg>
+<!NOTATION jpg SYSTEM "visorjpg.exe">
+
+<!--Entidades de parametro-->
+<!ENTITY % p "#REQUIRED">
+<!ENTITY % i "#IMPLIED">
+
+
+
+
+<!--Elemento vehiculos-->
+<!ELEMENT vehiculos (vehiculo)+>
+
+<!--Elemento vehiculo-->
+<!ELEMENT vehiculo (modelo, caracteristicas, precio)>
+  <!ATTLIST vehiculo 
+                                        bastidor ID %p;
+                                        foto ENTITY %p;>
+
+<!--Elemento modelo-->
+<!ELEMENT modelo (fabricante, anno, nombreComercial, nombreTecnico?)>
+    <!ELEMENT fabricante (#PCDATA)>
+    <!ELEMENT anno (#PCDATA)>
+    <!ELEMENT nombreComercial (#PCDATA)>
+      <!ATTLIST nombreComercial idNC ID %p;>
+      
+    <!ELEMENT nombreTecnico (#PCDATA)>
+      <!ATTLIST nombreTecnico idNT IDREF #REQUIRED>
+
+<!--Elemento caracteristicas-->
+<!ELEMENT caracteristicas (cilindrada, emisiones, potencia, extras)>
+    <!ATTLIST caracteristicas 
+                                                    combustible (diesel | gasolina | otro) "diesel" 
+                                                    color (blanco | rojo | azul | gris | negro) "negro">
+    
+    <!ELEMENT cilindrada (#PCDATA)>
+    <!ELEMENT emisiones (#PCDATA)>
+    <!ELEMENT potencia (#PCDATA)>
+    <!ELEMENT extras (#PCDATA)>
+
+<!--Elemento precio-->
+  <!ELEMENT precio (#PCDATA)>
+    <!ATTLIST precio oferta (SI | NO) "SI">
+
+
