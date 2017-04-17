@@ -1,33 +1,5 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE vehiculos SYSTEM "Examen.dtd">
 
-<vehiculos>
-
-    <vehiculo bastidor="B1234" foto="fotoRenault">
-       <modelo>
-           <fabricante>&f1;</fabricante>
-           <anno>2014</anno>
-           <nombreComercial idNC="Re">Clio</nombreComercial>
-           <nombreTecnico idNT="Re">Clio 5p elegante full Luxury premium plus</nombreTecnico>
-       </modelo>
-       
-       <caracteristicas combustible="gasolina" color="rojo">
-           <cilindrada>1200 cc</cilindrada>
-           <emisiones>95 mg</emisiones>
-           <potencia>65 CV</potencia>
-           <extras>&extraRenault;</extras>
-       </caracteristicas>
-       
-       <precio oferta="SI">7800</precio>
-    </vehiculo>
-    
-    
-    <vehiculo bastidor="B5678" foto="fotoWolkswagen">
-       <modelo>
-          <fabricante>&f2;</fabricante>
-          <anno>2013</anno>
-          <nombreComercial idNC="Wo">Polo</nombreComercial>
-       </modelo> 
+          
        
        <caracteristicas>
           <cilindrada>1398 cc</cilindrada>
